@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  name: hello-pod
+spec:
+  containers:
+    - image: nigelpoulton/k8sbook:latest
+      name: hello-ctr
+      ports:
+      - containerPort: 8080
