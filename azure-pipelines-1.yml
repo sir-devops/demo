@@ -1,0 +1,16 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- task: KubernetesManifest@0
+  displayName: Deploy to Kubernetes
+  inputs:
+    action: 'deploy'
+    kubernetesServiceConnection: 'Kube_conn'
+    namespace: 'default'
+    manifests: 'https://github.com/sir-devops/demo/blob/main/pod1.yaml'
+
